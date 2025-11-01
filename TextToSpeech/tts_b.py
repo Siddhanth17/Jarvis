@@ -1,5 +1,5 @@
 import requests
-from playsound import playsound
+from playsound import playsound as _playsound
 import os 
 from typing import Union 
 
@@ -19,8 +19,8 @@ def speak(text: str,voices: str = "Brian", folder: str="", extension: str = ".mp
         result_content = generate_audio(text,voices)
         file_path = os.path.join(folder,f"{voices}{extension}")
         with open(file_path,"wb")as f:
-            f.write(result_content)
-        playsound(file_path,)
+            f.write(result_content) 
+        _playsound(file_path)
         os.remove(file_path)
         return None
     except Exception as e:

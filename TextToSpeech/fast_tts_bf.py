@@ -5,7 +5,6 @@ import threading
 import sys
 import shlex
 
-# optional playback library
 try:
     from playsound import playsound as _playsound
 except Exception:
